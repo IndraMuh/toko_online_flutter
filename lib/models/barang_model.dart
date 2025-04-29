@@ -15,6 +15,6 @@ class BarangModel {
     id = parsedJson["id"];
     nama_barang = parsedJson["nama_barang"];
     harga = parsedJson["harga"];
-    gambar_barang = "${url.BaseUrl}/${parsedJson["gambar_barang"]}";
+    gambar_barang = "${url.BaseImageUrl}/${parsedJson["gambar_barang"]}";
   }
 }

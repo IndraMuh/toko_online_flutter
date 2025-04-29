@@ -17,9 +17,7 @@ class BarangService {
       return response;
     }
     var uri = Uri.parse(url.BaseUrl + "/getbarang");
-    Map<String, String> headers = {
-      "Authorization": 'Bearer ${user.token}',
-    };
+
     var getBarang = await http.get(uri);
     print(getBarang.statusCode);
     if (getBarang.statusCode == 200) {
@@ -75,6 +73,7 @@ class BarangService {
     reponse.headers.addAll(headers);
     reponse.fields['nama_barang'] = request["nama_barang"];
     reponse.fields['harga'] = request["harga"];
+    reponse.fields['category_id'] = "1";
 
     var res = await reponse.send();
     var result = await http.Response.fromStream(res);
@@ -86,6 +85,7 @@ class BarangService {
             status: true, message: 'success insert / update data');
         return response;
       } else {
+        print(data["message"]);
         ResponseDataMap response = ResponseDataMap(
             status: false, message: 'Failed insert / update data');
         return response;
@@ -100,6 +100,7 @@ class BarangService {
 
   Future hapusBarang(context, id) async {
     UserLogin userLogin = UserLogin(); // Tambahkan instance
+    //print(getBarang.statusCode);
     var user = await userLogin.getUserLogin();
     print(user.token);
     var uri = Uri.parse(url.BaseUrl + "/admin/hapusbarang/$id");

@@ -35,7 +35,7 @@ class _BottomNavState extends State<BottomNav> {
       if (index == 0) {
         Navigator.pushReplacementNamed(context, '/dashboard');
       } else if (index == 1) {
-        Navigator.pushReplacementNamed(context, '/movie');
+        Navigator.pushReplacementNamed(context, '/barang');
       }
     } else if (role == "user") {
       if (index == 0) {

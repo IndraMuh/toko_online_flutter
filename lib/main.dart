@@ -14,7 +14,7 @@ void main() {
       '/': (context) => RegisterUserView(),
       '/login': (context) => LoginView(),
       '/dashboard': (context) => DashboardView(),
-      '/movie': (context) => BarangView(),
+      '/barang': (context) => BarangView(),
       '/pesan': (context) => PesanView(),
     },
   ));
