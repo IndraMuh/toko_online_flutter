@@ -61,7 +61,7 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.file_copy),
-                  label: 'Movie',
+                  label: 'Barang',
                 ),
               ])
         : role == "user"
